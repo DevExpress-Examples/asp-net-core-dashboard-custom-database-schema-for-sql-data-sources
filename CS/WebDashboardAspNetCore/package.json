@@ -1,0 +1,11 @@
+{
+    "name": "webdashboardaspnetcore",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "devextreme": "21.2.8",
+        "@devexpress/analytics-core": "21.2.8",
+        "devexpress-dashboard": "21.2.8",
+        "jquery-ui-dist": "^1.12.1"
+    }
+}
