@@ -1,6 +1,36 @@
 # Dashboard for ASP.NET Core - How to customize a database schema for SQL data sources
 
-This example demonstrates how to customize a database schema for an SQL data source.
+This example shows how to provide a custom database schema for the dashboard. The example contains two implementation of the [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx) interface, `MyDBSchemaProvider` and `CustomDBSchemaProvider`. Use the [DashboardConfigurator.SetDBSchemaProvider](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.DashboardConfigurator.SetDBSchemaProvider(DevExpress.DataAccess.Sql.IDBSchemaProviderEx)) method to assign the database schema for the Web Dashboard.
+
+To see the result, add a new query or edit the existing query.
+
+### The MyDBSchemaProvider class
+
+File: [MyDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/MyDBSchemaProvider.cs)
+
+This provider displays only:
+
+- Tables which names start with the letter *C*
+- Views which names start with *Sales*
+- Stored procedures with zero arguments
+
+![](custom_dbschema_views.png)
+
+### The CustomDBSchemaProvider class
+
+File: [CustomDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/CustomDBSchemaProvider.cs)
+
+This provider loads only two tables (`Categories` and `Products`) for the `NWindConnectionString` connection. Both tables contain only two columns and the tables are linked by the `CategoryID` field.
+
+![](custom_dbschema_tables.png)
+
+This technique improves the dashboard performance, since only the specified tables are loaded to the dashboard.
+
+## Files to Look At
+
+* [MyDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/MyDBSchemaProvider.cs)
+* [CustomDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/CustomDBSchemaProvider.cs)
+* [DashboardUtils.cs](/CS/WebDashboardAspNetCore/Code/DashboardUtils.cs#L19)
 
 ## Documentation
 
