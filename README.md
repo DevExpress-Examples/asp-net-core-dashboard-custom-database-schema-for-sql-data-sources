@@ -23,7 +23,7 @@ This provider displays only:
 
 File: [CustomDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/CustomDBSchemaProvider.cs)
 
-This provider loads only two tables (`Categories` and `Products`) for the `NWindConnectionString` connection. Both tables contain only two columns and the tables are linked by the `CategoryID` field.
+This provider loads two tables (`Categories` and `Products`) for the `NWindConnectionString` connection. Both tables contain only two columns and the tables are linked by the `CategoryID` field.
 
 ![](images/custom_dbschema_tables.png)
 
