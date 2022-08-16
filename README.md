@@ -17,7 +17,7 @@ This provider displays only:
 - Views which names start with *Sales*
 - Stored procedures with zero arguments
 
-![](custom_dbschema_views.png)
+![](images/custom_dbschema_views.png)
 
 ### The CustomDBSchemaProvider class
 
@@ -25,7 +25,7 @@ File: [CustomDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/CustomDBSchemaProv
 
 This provider loads only two tables (`Categories` and `Products`) for the `NWindConnectionString` connection. Both tables contain only two columns and the tables are linked by the `CategoryID` field.
 
-![](custom_dbschema_tables.png)
+![](images/custom_dbschema_tables.png)
 
 This technique improves the dashboard performance, since only the specified tables are loaded to the dashboard.
 
