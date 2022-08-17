@@ -3,7 +3,7 @@
 <!-- default badges end -->
 # Dashboard for ASP.NET Core - How to customize a database schema for SQL data sources
 
-This example shows how to provide a custom database schema for the dashboard. The example contains two implementation of the [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx) interface, `LimitDBSchemaProvider` and `ManualDBSchemaProvider`. Use the [DashboardConfigurator.SetDBSchemaProvider](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.DashboardConfigurator.SetDBSchemaProvider(DevExpress.DataAccess.Sql.IDBSchemaProviderEx)) method to assign the database schema for the Web Dashboard.
+This example shows how to create a custom database schema for the dashboard. The example contains two implementation of the [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx) interface, `LimitDBSchemaProvider` and `ManualDBSchemaProvider`. Call the [DashboardConfigurator.SetDBSchemaProvider](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWeb.DashboardConfigurator.SetDBSchemaProvider(DevExpress.DataAccess.Sql.IDBSchemaProviderEx)) method to assign the database schema to the Web Dashboard.
 
 To see the result, add a new query or edit the existing query.
 
@@ -11,7 +11,7 @@ To see the result, add a new query or edit the existing query.
 
 File: [LimitDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/LimitDBSchemaProvider.cs)
 
-This provider displays only:
+This provider displays only the following database entities:
 
 - Tables which names start with the letter *C*
 - Views which names start with *Sales*
@@ -23,7 +23,7 @@ This provider displays only:
 
 File: [ManualDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/ManualDBSchemaProvider.cs)
 
-This provider loads only two tables (`Categories` and `Products`) for the `NWindConnectionString` connection. Both tables contain only two columns and the tables are linked by the `CategoryID` field.
+This provider loads two tables (`Categories` and `Products`) for the `NWindConnectionString` connection. Both tables contain only two columns and the tables are linked by the `CategoryID` field.
 
 ![](images/custom_dbschema_tables.png)
 
