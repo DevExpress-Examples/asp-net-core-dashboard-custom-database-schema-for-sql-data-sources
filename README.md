@@ -11,7 +11,7 @@ To see the result, add a new query or edit the existing query.
 
 File: [MyDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/MyDBSchemaProvider.cs)
 
-This provider displays only:
+This provider displays only the following database entities:
 
 - Tables which names start with the letter *C*
 - Views which names start with *Sales*
