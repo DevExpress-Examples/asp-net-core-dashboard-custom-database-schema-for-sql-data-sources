@@ -3,7 +3,7 @@ using DevExpress.Xpo.DB;
 using System.Collections.Specialized;
 
 namespace WebDashboardAspNetCore {
-    public class CustomDBSchemaProvider : IDBSchemaProviderEx {
+    public class ManualDBSchemaProvider : IDBSchemaProviderEx {
         DBTable[] tables;
         public void LoadColumns(SqlDataConnection connection, params DBTable[] tables) {
             // Loads the specified columns in the Categories and Products tables.
@@ -24,7 +24,7 @@ namespace WebDashboardAspNetCore {
                     DBForeignKey foreignKey = new DBForeignKey(
                         new[] { categoryIdColumn },
                         "Categories",
-                        CustomDBSchemaProvider.CreatePrimaryKeys("CategoryID"));
+                        ManualDBSchemaProvider.CreatePrimaryKeys("CategoryID"));
                     table.ForeignKeys.Add(foreignKey);
                 }
             }

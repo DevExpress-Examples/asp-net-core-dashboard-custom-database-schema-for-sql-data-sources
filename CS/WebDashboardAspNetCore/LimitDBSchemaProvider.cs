@@ -3,9 +3,9 @@ using DevExpress.Xpo.DB;
 using System.Linq;
 
 namespace WebDashboardAspNetCore {
-    public class MyDBSchemaProvider : IDBSchemaProviderEx {
+    public class LimitDBSchemaProvider : IDBSchemaProviderEx {
         DBSchemaProviderEx provider;
-        public MyDBSchemaProvider() {
+        public LimitDBSchemaProvider() {
             this.provider = new DBSchemaProviderEx();
         }
 
