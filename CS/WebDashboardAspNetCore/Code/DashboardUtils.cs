@@ -17,7 +17,7 @@ namespace WebDashboardAspNetCore {
             configurator.SetDataSourceStorage(new DataSourceInMemoryStorage());
 
             // This method assigns the database schema provider to the Web Dashboard.
-            // Uncomment one of the following lines depending on the needed provider.
+            // Uncomment one of the following lines depending on the provider.
             configurator.SetDBSchemaProvider(new ManualDBSchemaProvider());
             // configurator.SetDBSchemaProvider(new LimitDBSchemaProvider());
 
