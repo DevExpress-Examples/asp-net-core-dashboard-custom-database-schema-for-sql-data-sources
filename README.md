@@ -27,7 +27,7 @@ This provider loads two tables (`Categories` and `Products`) for the `NWindConne
 
 ![](images/custom_dbschema_tables.png)
 
-This technique improves the [Data Source Wizard](https://docs.devexpress.com/Dashboard/117680/) performance when loading the database schema to the dashboard.
+This technique improves the [Data Source Wizard](https://docs.devexpress.com/Dashboard/117680/) performance when loading the database schema.
 
 ## Files to Look At
 
