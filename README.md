@@ -27,7 +27,7 @@ This provider loads two tables (`Categories` and `Products`) for the `NWindConne
 
 ![](images/custom_dbschema_tables.png)
 
-This technique improves the dashboard performance, since only the specified tables are loaded to the dashboard.
+This technique improves the dashboard performance since only the specified tables are loaded to the dashboard.
 
 ## Files to Look At
 
