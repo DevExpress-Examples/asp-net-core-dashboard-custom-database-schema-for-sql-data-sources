@@ -39,7 +39,7 @@ This technique improves the [Data Source Wizard](https://docs.devexpress.com/Das
 
 ## Documentation
 
-* [IDBSchemaProviderEx](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Sql.IDBSchemaProviderEx)
+* [Implement a Custom Database Schema](https://docs.devexpress.com/Dashboard/404044/web-dashboard/dashboard-backend/implement-a-custom-database-schema?p=netframework)
 
 ## More Examples
 
