@@ -31,7 +31,7 @@ This provider loads two tables (`Categories` and `Products`) for the `NWindConne
 
 This technique improves the [Data Source Wizard](https://docs.devexpress.com/Dashboard/117680/) performance when loading the database schema.
 
-## Files to Look At
+## Files to Review
 
 * [LimitDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/LimitDBSchemaProvider.cs)
 * [ManualDBSchemaProvider.cs](./CS/WebDashboardAspNetCore/ManualDBSchemaProvider.cs)
