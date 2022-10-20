@@ -1,25 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using DevExpress.AspNetCore;
+using DevExpress.DashboardAspNetCore;
+using DevExpress.DashboardWeb;
+using Microsoft.Extensions.FileProviders;
+using WebDashboardAspNetCore;
 
-namespace WebDashboardAspNetCore
+var builder = WebApplication.CreateBuilder(args);
+
+IFileProvider? fileProvider = builder.Environment.ContentRootFileProvider;
+IConfiguration? configuration = builder.Configuration;
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+
+builder.Services.AddDevExpressControls();
+builder.Services.AddScoped<DashboardConfigurator>((IServiceProvider serviceProvider) => {
+    return DashboardUtils.CreateDashboardConfigurator(configuration, fileProvider);
+});
+
+var app = builder.Build();
+
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
-
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
+    app.UseExceptionHandler("/Home/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
 }
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseDevExpressControls();
+
+app.UseRouting();
+
+app.UseAuthorization();
+app.MapRazorPages();
+
+EndpointRouteBuilderExtension.MapDashboardRoute(app, "dashboardControl", "DefaultDashboard");
+
+app.Run();
